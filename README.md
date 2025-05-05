@@ -102,6 +102,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 | email      | VARCHAR(255) | Email unik untuk login                |
 | password   | VARCHAR(255) | Password terenkripsi                  |
 | role       | ENUM         | Role pengguna: admin, Owner, Borrower |
+| 
 | created_at | TIMESTAMP    | Waktu dibuat                          |
 | updated_at | TIMESTAMP    | Waktu diperbarui                      |
 
@@ -113,7 +114,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 | ----------- | ------------ | --------------------------------------------------------- |
 | id          | INT          | Primary key                                               |
 | name        | VARCHAR(255) | Nama Owner                                                |
-| description | VARCHAR(255) | Deskripsi owner (opsional)                                |
+| description | text         | Deskripsi owner (opsional)                                |
 | owner_id    | INT          | Merujuk ke id di table user                               |
 | is_available| Boolean      | Status ketersediaan dengan default true                   |
 | created_at  | TIMESTAMP    | Waktu dibuat                                              |
@@ -126,8 +127,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 | Nama Field    | Tipe Data | Keterangan                                               |
 | ------------- | --------- | -------------------------------------------------------- |
 | id            | INT       | Primary key, auto increment                              |
-| item_id       | INT       | ID agenda yang didaftarkan (relasi ke tabel agendas)     |
-| borrower_id   | INT       | ID siswa yang mendaftar agenda (relasi ke tabel users)   |
+| item_id       | INT       | merujuk ke id item yang dipinjam                         |
+| borrower_id   | INT       | ID orang yang mendaftar barang                           |
 | borrower_date | date      | Tanggal peminjaman                                       |
 | return_date   | date      | Tanggal pengembalian(opsional)                           |
 | Status        | enum      | Status peminjaman                                        |
